@@ -3,6 +3,7 @@
 #      Time Complexity:          O(nlogn)
 #      Space Complexity:         O(n)
 #      Stability:                Stable
+#      Info:                     Decrease by half pattern (Divide and Conquer)
 #=============================================================================================================================
 
 def Merge(A, B):
