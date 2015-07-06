@@ -28,7 +28,28 @@ def isAllUniqueChar(s):
 # Ideas: First, sort the stirng, if there are duplicates in the given string, they should be neighbor then. Iterate each element in the stirng to see if the neighbors are same
 # Time Complexity: O(nlgon) base on the sort algorithm - e.g. quick sort
 # Space Complexity: O(1)
-# FYI: the example below just use the build-in sorted() method
+
+import random
+
+def Randomized_QuickSort(L):
+	if len(L) <= 1:
+		return L
+	else:
+		# for the pivot, we randomly choosed from L, instead of L[0]
+		pivot = random.choice(L)
+		LT = []
+		EQ = []
+		GT = []
+		for x in L:
+			if x < pivot:
+				LT.append(x)
+			elif x == pivot:
+				EQ.append(x)
+			else:
+				GT.append(x)
+		LT_S = Randomized_QuickSort(LT)
+		GT_S = Randomized_QuickSort(GT)
+		return LT_S + EQ + GT_S
 
 def isAllUniqueChar(s):
 	"return true if a string only contains unique characters"
@@ -37,7 +58,7 @@ def isAllUniqueChar(s):
 	if s is None or len(s) > 256:
 		return False
 
-	sortedStr = sorted(s)
+	sortedStr = Randomized_QuickSort(s)
 	for i in range(len(s)-1):
 		if s[i] == s[i+1]:
 			return False
