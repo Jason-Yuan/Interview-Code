@@ -6,7 +6,7 @@
 #      Info:                     Decrease-by-one sorting
 ##############################################################################################################################
 
-#Selection Sort          
+# Selection Sort          
 def SelectionSort(L):
 	unsorted_list = L
 	sorted_list = []
@@ -21,7 +21,7 @@ def SelectionSort(L):
 
 ##############################################################################################################################
 
-#In-place Selection Sort  
+# In-place Selection Sort  
 def Inplace_SelectionSort(L):
 	for i in range(len(L)):
 		l = i
