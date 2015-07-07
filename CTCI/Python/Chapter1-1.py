@@ -1,4 +1,4 @@
-###################################################################################################
+##############################################################################################################################
 # Method 1
 # Ideas: Assume we have 256 ASCII characters, we set up a array of 256 flags. Iterate each char in 
 #        the given string, first convert it to value of the byte(e.g. 97), then check if the flag 
@@ -6,7 +6,7 @@
 # Time Complexity: O(n)
 # Space Complexity: O(1)
 # FYI: ord() is a build-in method which is the inverse of chr() for 8-bit strings(e.g. ord('a') = 97)
-###################################################################################################
+##############################################################################################################################
 
 def isAllUniqueChar(s):
 	"return true if a string only contains unique characters"
@@ -26,13 +26,13 @@ def isAllUniqueChar(s):
 	return True 
 
 
-###################################################################################################
+##############################################################################################################################
 # Method 2
 # Ideas: First, sort the stirng, if there are duplicates in the given string, they should be 
 #        neighbor then. Iterate each element in the stirng to see if the neighbors are same.
 # Time Complexity: O(nlgon) base on the sort algorithm - e.g. quick sort
 # Space Complexity: O(1)
-###################################################################################################
+##############################################################################################################################
 
 import random
 
@@ -70,7 +70,7 @@ def isAllUniqueChar2(s):
 
 	return True
 
-###################################################################################################
+##############################################################################################################################
 
 if __name__ == "__main__":
 	s = "Hello, World"
