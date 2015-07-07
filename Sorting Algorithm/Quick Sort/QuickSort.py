@@ -1,4 +1,4 @@
-#=============================================================================================================================
+##############################################################################################################################
 #      Project:                  Quick Sort
 #      Time Complexity:          Expected O(nlogn) / Worst case O(n2)  
 #      Space Complexity:         O(n)
@@ -6,7 +6,7 @@
 #      Info:                     1. It follows the decrease-by-half pattern, so bears some resemblance to merge sort.
 #                                2. In quick sort algorithm, a pivot is an element of L used to divide L into three sub_lists.
 #                                3. We hope the division process can divide L into two sub-lists of "roughly equal size".
-#=============================================================================================================================
+##############################################################################################################################
 
 # First method, deterministic quick sort 
 # worst-case time complextity is O(n2)
@@ -29,9 +29,7 @@ def Deterministic_QuickSort(L):
 		GT_S = Deterministic_QuickSort(GT)
 		return LT_S + EQ + GT_S
 
-L = [2, 3, 6, 7, 4, 5, 1, 9, 8]
-print ( "Deterministic quick sort: ", Deterministic_QuickSort(L) )
-
+##############################################################################################################################
 
 # Second method, randomized quick sort, we need to use the random library
 # Try to make O(n2)-time scenario less likely to occur.
@@ -57,9 +55,7 @@ def Randomized_QuickSort(L):
 		GT_S = Randomized_QuickSort(GT)
 		return LT_S + EQ + GT_S
 
-L = [2, 3, 6, 7, 4, 5, 1, 9, 8]
-print ( "Randomized quick sort: ", Randomized_QuickSort(L) )
-
+##############################################################################################################################
 
 # Third method, in-place quick sort
 # Try to avoid the cost of allocating fresh data structures to store its output.
@@ -104,5 +100,18 @@ def Inplace_Partition(L, s, e):
 def Swap(L, i, j):
 	L[i], L[j] = L[j], L[i]
 
-L = [2, 3, 6, 7, 4, 5, 1, 9, 8]
-print ( "Inplace quick sort: ", Inplace_QuickSort(L) )
+##############################################################################################################################
+
+if __name__ == '__main__':
+	L1 = [2, 3, 6, 7, 4, 5, 1, 9, 8]
+	print ( "Deterministic quick sort: ", Deterministic_QuickSort(L1) )
+
+	L2 = [2, 3, 6, 7, 4, 5, 1, 9, 8]
+	print ( "Randomized quick sort: ", Randomized_QuickSort(L2) )
+
+	L3 = [2, 3, 6, 7, 4, 5, 1, 9, 8]
+	print ( "Inplace quick sort: ", Inplace_QuickSort(L3) )
+
+
+
+
