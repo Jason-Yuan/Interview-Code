@@ -3,7 +3,7 @@
 #      Time Complexity:          Expected O(nlogn) / Worst case O(n2)  
 #      Space Complexity:         O(n)
 #      Stability:                Not stable
-#      Info:                     1. It follows the decrease-by-half pattern, so bears some resemblance to merge sort.
+#      Info:                     1. Decrease-by-half sorting, so bears some resemblance to merge sort.
 #                                2. In quick sort algorithm, a pivot is an element of L used to divide L into three sub_lists.
 #                                3. We hope the division process can divide L into two sub-lists of "roughly equal size".
 ##############################################################################################################################
@@ -102,16 +102,15 @@ def Swap(L, i, j):
 
 ##############################################################################################################################
 
-if __name__ == '__main__':
+def main():
 	L1 = [2, 3, 6, 7, 4, 5, 1, 9, 8]
-	print ( "Deterministic quick sort: ", Deterministic_QuickSort(L1) )
+	print "Deterministic quick sort: ", Deterministic_QuickSort(L1)
 
 	L2 = [2, 3, 6, 7, 4, 5, 1, 9, 8]
-	print ( "Randomized quick sort: ", Randomized_QuickSort(L2) )
+	print "Randomized quick sort: ", Randomized_QuickSort(L2)
 
 	L3 = [2, 3, 6, 7, 4, 5, 1, 9, 8]
-	print ( "Inplace quick sort: ", Inplace_QuickSort(L3) )
+	print "Inplace quick sort: ", Inplace_QuickSort(L3)
 
-
-
-
+if __name__ == '__main__':
+	main()

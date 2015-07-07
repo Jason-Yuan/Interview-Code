@@ -29,7 +29,7 @@ def isAllUniqueChar(s):
 ##############################################################################################################################
 # Method 2
 # Ideas: First, sort the stirng, if there are duplicates in the given string, they should be 
-#        neighbor then. Iterate each element in the stirng to see if the neighbors are same.
+#        neighbor then. Iterate each element in the stirng to see if the adjacent items are same.
 # Time Complexity: O(nlgon) base on the sort algorithm - e.g. quick sort
 # Space Complexity: O(1)
 ##############################################################################################################################
