@@ -17,14 +17,13 @@ def Inplace_InsertionSort(L):
 
 		L[i] = currentvalue
 
-	return L
-
 
 ##############################################################################################################################
 
 def main():
 	L = [1, 4, 3, 5, 6, 2]
-	print "Inplace InsertionSort: ", Inplace_InsertionSort(L)
+	Inplace_InsertionSort(L)
+	print "Inplace InsertionSort: ", L
 
 if __name__ == '__main__':
 	main()

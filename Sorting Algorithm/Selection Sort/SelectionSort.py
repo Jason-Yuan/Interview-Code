@@ -30,7 +30,6 @@ def Inplace_SelectionSort(L):
 				l = j
 		#swap L[i] and L[l]
 		L[l], L[i] = L[i], L[l]
-	return L
 
 ##############################################################################################################################
 
@@ -39,7 +38,8 @@ def main():
 	print "SelectionSort: ", SelectionSort(L1)
 
 	L2 = [1, 4, 3, 5, 6, 2]
-	print "Inplace SelectionSort: ", Inplace_SelectionSort(L2)
+	Inplace_SelectionSort(L2)
+	print "Inplace SelectionSort: ", L2
 
 if __name__ == '__main__':
 	main()	
