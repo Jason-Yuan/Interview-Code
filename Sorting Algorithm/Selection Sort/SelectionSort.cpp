@@ -16,7 +16,7 @@ int* SelectionSort(int a[], int n)
 {
 	// declare a vector called unsorted_list and assign each element of input array into the vector
 	vector<int> unsorted_list;
-	unsorted_list.assign(a, a + n) ; 
+	unsorted_list.assign(a, a + n); 
 
 	// create another vector, select the smallest element in unsorted_list each time, and append to it
 	vector<int> sorted_list;
