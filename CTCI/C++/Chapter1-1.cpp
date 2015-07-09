@@ -118,7 +118,3 @@ int main()
 	cout<<"Method 2: "<<isAllUniqueChar2(s)<<endl;
 	return 0;
 }
-
-
-
-

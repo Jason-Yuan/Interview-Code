@@ -72,11 +72,10 @@ def isAllUniqueChar2(s):
 
 ##############################################################################################################################
 
-if __name__ == "__main__":
+def main():
 	s = "Hello, World"
 	print "Method 1: ", isAllUniqueChar(s)
 	print "Method 2: ", isAllUniqueChar2(s)
 
-
-
-
+if __name__ == "__main__":
+	main()
