@@ -1,3 +1,7 @@
+##############################################################################################################################
+#      Project:                  Stack base on python list
+##############################################################################################################################
+
 class Stack:
     def __init__(self):
         self.items = []
@@ -17,8 +21,21 @@ class Stack:
     def size(self):
         return len(self.items)
 
+##############################################################################################################################
 
-a = Stack()
-a.push(1)
-a.push(2)
-print a.pop()
+def main():
+    # initialize a stack
+    mystack = Stack()
+
+    # push something into the stack
+    mystack.push(1)
+    mystack.push(2)
+    mystack.push(3)
+
+    print "Size of my stack: ", mystack.size()
+    print "Top of the stack is: ", mystack.peek()
+    print "Pop out an item from stack: ", mystack.pop()
+    print "Size of my stack: ", mystack.size()
+
+if __name__ == '__main__':
+    main()

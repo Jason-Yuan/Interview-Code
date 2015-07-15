@@ -1,3 +1,7 @@
+##############################################################################################################################
+#      Project:                  Queue base on python list
+###############################################################################################################################
+
 class Deque:
     def __init__(self):
         self.items = []
@@ -20,3 +24,20 @@ class Deque:
     def size(self):
         return len(self.items)
 
+##############################################################################################################################
+
+def main():
+    # initialize a deque
+    mydeque = Deque()
+
+    mydeque.addFront(1)
+    mydeque.addRear(2)
+    mydeque.addFront(3)
+    mydeque.addRear(4)
+
+    print "Items in mydeque: "
+    while not mydeque.isEmpty():
+        print mydeque.removeFront()
+
+if __name__ == '__main__':
+    main()
