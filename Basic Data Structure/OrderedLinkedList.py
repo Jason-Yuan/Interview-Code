@@ -85,9 +85,10 @@ class UnorderedLinkedList:
 
     def Show(self):
     	current = self.head
-    	while current != None:
-    		print current.data
+    	while current.getNext() != None:
+    		print current.data,
     		current = current.getNext()
+        print current.data
 
 ##############################################################################################################################
 
