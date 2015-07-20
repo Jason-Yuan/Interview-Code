@@ -8,7 +8,7 @@ from Stack import *
 #        1. move top N -1 disks from tower A to tower C
 #        2. move N'th disk from tower A to tower B
 #        3. move top N-1 disks from tower C to tower B 
-# Time Complexity: O(2**n) 
+# Time Complexity: O(2^n) 
 # Space Complexity: O(n)
 ##############################################################################################################################
 
