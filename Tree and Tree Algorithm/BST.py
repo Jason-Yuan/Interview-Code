@@ -113,6 +113,11 @@ def main():
     bst.inorder()
     bst.preorder()
     bst.postorder()
+    print "Dose 7 exist in the tree? ", bst.find(7)
+    print "Dose 8 exist in the tree? ", bst.find(8)
+    print "Dose 5 exist in the tree? ", bst.find(5)
+    print "Dose 2 exist in the tree? ", bst.find(2)
+    print "Dose 100 exist in the tree? ", bst.find(100)
 
 if __name__ == '__main__':
         main()	
