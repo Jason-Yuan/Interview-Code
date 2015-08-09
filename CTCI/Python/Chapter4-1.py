@@ -26,17 +26,17 @@ def MinDepth(node):
 
 ##############################################################################################################################
 
-def mian():
+def main():
 	mytree = BST()
 
-	bst.insert(3)
-	bst.insert(5)
-	bst.insert(2)
-	bst.insert(7)
-	bst.insert(12)
-	bst.insert(8)
+	mytree.insert(3)
+	mytree.insert(5)
+	mytree.insert(2)
+	mytree.insert(7)
+	mytree.insert(12)
+	mytree.insert(8)
 
-	print "Is the tree balanced? ", IsBalancedTree(bst)
+	print "Is the tree balanced? ", IsBalancedTree(mytree)
 
 if __name__ == '__main__':
         main()	
