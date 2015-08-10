@@ -17,42 +17,45 @@ class DirectedGraphNode:
         self.neighbors = []
 
 def hasRoute(s, t):
-        level = {s: 0}
-        parent = {s: None}
-        i = 1
-        frontier = [s]
-        while frontier:
-            next = []
-            for node in frontier:
-                for neighbor in node.neighbors:
-                    if neighbor not in level:
-                        if neighbor == t:
-                            return True
-                        level[neighbor] = i
-                        parent[neighbor] = node
-                        next.append(neighbor)
-            frontier = next
+    if s == t:
+        return True
+    elif s == None or t == None:
         return False
+    level = {s: 0}
+    parent = {s: None}
+    i = 1
+    frontier = [s]
+    while frontier:
+        next = []
+        for node in frontier:
+            for neighbor in node.neighbors:
+                if neighbor not in level:
+                    if neighbor == t:
+                        return True
+                    level[neighbor] = i
+                    parent[neighbor] = node
+                    next.append(neighbor)
+        frontier = next
+    return False
 
 ##############################################################################################################################
 
 def main():
-	#testing
+    A = DirectedGraphNode('A')
+    B = DirectedGraphNode('B')
+    C = DirectedGraphNode('C')
+    D = DirectedGraphNode('D')
+    E = DirectedGraphNode('E')
 
-	A = DirectedGraphNode('A')
-	B = DirectedGraphNode('B')
-	C = DirectedGraphNode('C')
-	D = DirectedGraphNode('D')
-	E = DirectedGraphNode('E')
-	
-	A.neighbors.append(B)
-	A.neighbors.append(D)
-	B.neighbors.append(C)
-	B.neighbors.append(D)
-	D.neighbors.append(E)
+    A.neighbors.append(B)
+    A.neighbors.append(D)
+    B.neighbors.append(C)
+    B.neighbors.append(D)
+    D.neighbors.append(E)
 
-	print "Is there a path from A to E? ", hasRoute(A, E)
-	print "Is there a path from D to B? ", hasRoute(D, B)
+    print "Is there a path from A to E? ", hasRoute(A, E)
+    print "Is there a path from A to A? ", hasRoute(A, A)
+    print "Is there a path from D to B? ", hasRoute(D, B)
 
 if __name__ == '__main__':
 	main()
