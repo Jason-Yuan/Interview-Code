@@ -4,7 +4,7 @@ sys.path.append('../../Tree and Tree Algorithm')
 from BST import *
 
 ##############################################################################################################################
-# Ideas:  Check if two node has commom ancestor, if not check their parrent recursively
+# Ideas:  Recursion, find the path
 # Time Complexity: O(nlogn)
 # Space Complexity: O(h)
 ##############################################################################################################################
