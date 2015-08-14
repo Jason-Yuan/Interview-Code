@@ -22,16 +22,24 @@ def updateBits(n, m, i, j):
 	mask = left | right
 	n_cleared = n & mask
 	m_shifted = m << i
-	return n_cleared | m_shifted
+	return twos_comp((n_cleared | m_shifted), 2)
+
+def twos_comp(val, bits):
+	"""
+	compute the 2's compliment of positive int value val
+	"""
+	if val > 0 and val&(1<<(bits-1)) != 0:  # not ==1
+		val -= 1<<bits
+	return val
 
 ##############################################################################################################################
 
 def main():
-	a = 0b10000000000
-	b = 0b10011
+	a = int(bin(-2147483648), 2)
+	b = int(bin(2147483647), 2)
 	print "First number is: ", '{0:b}'.format(a)
 	print "Second number is: ", '{0:b}'.format(b)
-	print '{0:b}'.format(updateBits(a, b, 2, 6))
+	print '{0:b}'.format(updateBits(a, b, 0, 30))
 
 if __name__ == '__main__':
 	main()
