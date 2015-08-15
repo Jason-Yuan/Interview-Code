@@ -1,5 +1,7 @@
 ##############################################################################################################################
-# Ideas: first a ^ b, then calculate how many 1 are there 
+# Ideas: LSB(Last Significant Bit)
+#        if n % 2 == 1 then count(0s) = count(1s)
+#        if n % 2 == 0 then count(0s) = 1 + count(1s)
 # Time Complexity: O(n)
 # Space Complexity: O(n)
 ##############################################################################################################################
