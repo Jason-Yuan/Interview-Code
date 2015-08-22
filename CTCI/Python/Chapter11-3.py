@@ -1,6 +1,7 @@
 ##############################################################################################################################
 # Ideas:	1. First to clearify, one rotate means move a large number from last to first eg 123456 -> 612345 -> 561234
 #       	2. Compare with the binary search we need to consider about the list[mid] sit in large part or small part
+# Issue:	Haven't figure out how to handle duplicates
 # Time Complexity: O(nlogn)
 # Space Complexity: O(1)
 ##############################################################################################################################
@@ -29,7 +30,10 @@ def searchRotate(L, target):
 
 def main():
 	a = [15, 16, 19, 20, 25, 1, 3, 4, 5, 7, 10, 14]
-	target = 25
+	target = 19
+	print "Find {} in {} \nPosition is {}".format(target, a, searchRotate(a, target))
+	a = [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+	target = 2
 	print "Find {} in {} \nPosition is {}".format(target, a, searchRotate(a, target))
 
 if __name__ == '__main__':
