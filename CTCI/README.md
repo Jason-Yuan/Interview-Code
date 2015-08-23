@@ -11,7 +11,7 @@
 * **Chapter 18** - Hard
 
 # Solution
-Here are my `Python` solutions, I will update my `C++` solutions later
+Here are my [Python](https://github.com/Jason-Yuan/Interview-Code/tree/master/CTCI/Python) solutions, I will update my [C++](https://github.com/Jason-Yuan/Interview-Code/tree/master/CTCI/C%2B%2B) solutions later
 
 # Contact
 Please contact me if there are any problems.
