@@ -30,7 +30,7 @@ def convertBoardToInt(board):
 # Ideas: 1. Check rows
 #        2. Check columns
 #        3. Check diagonal and reverse diagonal
-# Time Complexity: O()
+# Time Complexity: O(n^2)
 # Space Complexity: O(1)
 ##############################################################################################################################
 
