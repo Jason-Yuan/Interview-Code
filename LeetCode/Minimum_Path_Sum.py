@@ -4,16 +4,21 @@ class Solution(object):
         :type grid: List[List[int]]
         :rtype: int
         """
-        if not grid:
-            return 
-        r, c = len(grid), len(grid[0])
-        dp = [[0 for _ in xrange(c)] for _ in xrange(r)]
-        dp[0][0] = grid[0][0]
-        for i in xrange(1, r):
-            dp[i][0] = dp[i-1][0] + grid[i][0]
-        for i in xrange(1, c):
-            dp[0][i] = dp[0][i-1] + grid[0][i]
-        for i in xrange(1, len(grid)):
-            for j in xrange(1, len(grid[0])):
-                dp[i][j] = min(dp[i-1][j], dp[i][j-1]) + grid[i][j]
-        return dp[-1][-1]
+        if grid == None or len(grid) == 0 or len(grid[0]) == 0:
+            return 0
+        
+        cache = [[0 for _ in range(len(grid[0]))] for _ in range(len(grid))]
+        
+        cache[0][0] = grid[0][0]
+        
+        for i in range(1, len(grid)):
+            cache[i][0] = cache[i - 1][0] + grid[i][0]
+        
+        for i in range(1, len(grid[0])):
+            cache[0][i] = cache[0][i - 1] + grid[0][i]
+            
+        for i in range(1, len(grid)):
+            for j in range(1, len(grid[0])):
+                cache[i][j] = min(cache[i][j - 1], cache[i - 1][j]) + grid[i][j]
+            
+        return cache[len(grid) - 1][len(grid[0]) - 1]
