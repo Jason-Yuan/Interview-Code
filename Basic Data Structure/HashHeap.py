@@ -34,17 +34,7 @@ class HashHeap:
             self.hashmaxheap.append(data)
             self.map[data] = node(len(self.hashmaxheap) - 1, 1)
             self.currentSize += 1
-            # sift up
-            i = len(self.hashmaxheap) - 1
-            # // means devide by 2 and return int
-            while i // 2 > 0:
-                if self.hashmaxheap[i] > self.hashmaxheap[i // 2]:
-                    numA = self.map[self.hashmaxheap[i]].num
-                    numB = self.map[self.hashmaxheap[i // 2]].num
-                    self.map[self.hashmaxheap[i]] = node(i // 2, numA)
-                    self.map[self.hashmaxheap[i // 2]] = node(i, numB)
-                    self.hashmaxheap[i], self.hashmaxheap[i // 2] = self.hashmaxheap[i // 2], self.hashmaxheap[i] 
-                i = i // 2
+            self.siftUp(len(self.hashmaxheap) - 1)
 
     def peek(self):
         """returns the item with the maxmum key value"""
@@ -63,7 +53,7 @@ class HashHeap:
             self.hashmaxheap[1] = self.hashmaxheap[-1]
             self.map[self.hashmaxheap[1]] = node(1, self.map[self.hashmaxheap[1]].num)
             self.hashmaxheap.pop()
-            self.maxHeapify(1)
+            self.siftDown(1)
         else:
             self.map[res] = node(1, self.map[res].num - 1)
         self.currentSize -= 1
@@ -80,12 +70,26 @@ class HashHeap:
             self.hashmaxheap[existData.id] = self.hashmaxheap[-1]
             self.map[self.hashmaxheap[-1]] = node(existData.id, self.map[self.hashmaxheap[-1]].num)
             self.hashmaxheap.pop()
-            self.maxHeapify(existData.id)
+            self.siftUp(existData.id)
+            self.siftDown(existData.id)
         else:
             self.map[data] = node(existData.id, existData.num - 1)
         self.currentSize -= 1
 
-    def maxHeapify(self, index):
+    def siftUp(self, index):
+        # // means devide by 2 and return int
+        while index // 2 > 0:
+            if self.hashmaxheap[index] < self.hashmaxheap[index // 2]:
+                break
+            else:
+                numA = self.map[self.hashmaxheap[index]].num
+                numB = self.map[self.hashmaxheap[index // 2]].num
+                self.map[self.hashmaxheap[index]] = node(index // 2, numA)
+                self.map[self.hashmaxheap[index // 2]] = node(index, numB)
+                self.hashmaxheap[index], self.hashmaxheap[index // 2] = self.hashmaxheap[index // 2], self.hashmaxheap[index] 
+            index = index // 2
+
+    def siftDown(self, index):
         """correct single violation in a sub-tree"""
         if index > (len(self.hashmaxheap) - 1) // 2:
             return
@@ -94,14 +98,16 @@ class HashHeap:
             maxChild = index * 2
         else:
             maxChild = index * 2 + 1
-        if self.hashmaxheap[index] < self.hashmaxheap[maxChild]:
+        if self.hashmaxheap[index] > self.hashmaxheap[maxChild]:
+            return
+        else:
             numA = self.map[self.hashmaxheap[index]].num
             numB = self.map[self.hashmaxheap[maxChild]].num
             self.map[self.hashmaxheap[index]] = node(maxChild, numA)
             self.map[self.hashmaxheap[maxChild]] = node(index, numB)
             self.hashmaxheap[index], self.hashmaxheap[maxChild] = self.hashmaxheap[maxChild], self.hashmaxheap[index] 
-        self.maxHeapify(index * 2)
-        self.maxHeapify(index * 2 + 1)
+        self.siftDown(index * 2)
+        self.siftDown(index * 2 + 1)
 
     def size(self):
         return self.currentSize
