@@ -12,8 +12,15 @@
 #         self.right = None
 
 class Solution(object):
-    def __init__(self):
-        self.current = None
+    def sortedListToBST(self, head):
+        """
+        :type head: ListNode
+        :rtype: TreeNode
+        """
+        self.current = head
+        size = self.getListLength(head)
+
+        return self.sortedListToBSTHelper(size)
         
     def getListLength(self, head):
         size = 0
@@ -35,13 +42,3 @@ class Solution(object):
         root.right = right
 
         return root
-        
-    def sortedListToBST(self, head):
-        """
-        :type head: ListNode
-        :rtype: TreeNode
-        """
-        self.current = head
-        size = self.getListLength(head)
-
-        return self.sortedListToBSTHelper(size)
