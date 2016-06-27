@@ -1,26 +1,10 @@
-class Stack(object):
-    def __init__(self):
-        self.items = []
-    
-    def empty(self):
-        return self.items == []
-    
-    def push(self, x):
-        self.items.append(x)
-        
-    def pop(self):
-        return self.items.pop()
-    
-    def peek(self):
-        return self.items[len(self.items)-1]
-
 class Queue(object):
     def __init__(self):
         """
         initialize your data structure here.
         """
-        self.InStack = Stack()
-        self.OutStack = Stack()
+        self.stack1 = []
+        self.stack2 = []
         
 
     def push(self, x):
@@ -28,36 +12,31 @@ class Queue(object):
         :type x: int
         :rtype: nothing
         """
-        self.InStack.push(x)
+        self.stack1.append(x)
         
 
     def pop(self):
         """
         :rtype: nothing
         """
-        if not self.OutStack.empty():
-            return self.OutStack.pop()
-        else:
-            while not self.InStack.empty():
-                self.OutStack.push(self.InStack.pop())
-            return self.OutStack.pop()
-            
+        if not self.stack2:
+            while self.stack1:
+                self.stack2.append(self.stack1.pop())
+        return self.stack2.pop()
+        
+
     def peek(self):
         """
         :rtype: int
         """
-        if not self.OutStack.empty():
-            return self.OutStack.peek()
-        else:
-            while not self.InStack.empty():
-                self.OutStack.push(self.InStack.pop())
-            return self.OutStack.peek()
+        if not self.stack2:
+            while self.stack1:
+                self.stack2.append(self.stack1.pop())
+        return self.stack2[-1]
+        
 
     def empty(self):
         """
         :rtype: bool
         """
-        if self.InStack.empty() and self.OutStack.empty():
-            return True
-        else:
-            return False
+        return len(self.stack1) == 0 and len(self.stack2) == 0
