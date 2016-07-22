@@ -28,8 +28,6 @@ class Trie(object):
         
 class Solution(object):
     def __init__(self):
-        self.nextX = [1, 0, 0, -1]
-        self.nextY = [0, 1, -1, 0]
         self.result = []
     def findWords(self, board, words):
         """
